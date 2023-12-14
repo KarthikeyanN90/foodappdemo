@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import classes from "./page.module.css";
 import Image from "next/image";
 import { getMeal } from "@/lib/meals";
@@ -18,10 +18,10 @@ const MealDetailsPage = async ({ params }) => {
   }
 
   return (
-    <> 
-    {meal && 
-      <ShowMealDetails meal={meal} />
-    }
+    <>
+      <Suspense fallback={<p className={classes.loading}>Fetching Meals...</p>}>
+        <ShowMealDetails meal={meal} />
+      </Suspense>
     </>
   );
 };
