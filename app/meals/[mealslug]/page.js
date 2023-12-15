@@ -1,7 +1,5 @@
 import React, { Suspense } from "react";
 import classes from "./page.module.css";
-import Image from "next/image";
-import { getMeal } from "@/lib/meals";
 import { notFound } from "next/navigation";
 import { getMealDetails } from "@/lib/dbhelper";
 import ShowMealDetails from "@/components/meals/meal-details";
